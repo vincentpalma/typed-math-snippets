@@ -1,4 +1,8 @@
-# Obsidian Latex Suite <img src="https://img.shields.io/github/manifest-json/v/artisticat1/obsidian-latex-suite"> <img src="https://img.shields.io/github/downloads/artisticat1/obsidian-latex-suite/total">
+# Typed Math Snippets
+
+A port of [obsidian-latex-suite](https://github.com/artisticat1/obsidian-latex-suite) to [typed.md](https://typed.md).
+
+## Obsidian LaTeX Suite
 
 A plugin for Obsidian that aims to make typesetting LaTeX math as fast as handwriting.
 

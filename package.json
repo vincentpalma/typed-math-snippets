@@ -1,12 +1,20 @@
 {
-	"name": "obsidian-latex-suite",
-	"version": "1.9.8",
+	"name": "@vpalma/typed-math-snippets",
+	"version": "0.0.1",
 	"description": "Make typesetting LaTeX math as fast as handwriting through snippets, text expansion, and editor enhancements",
 	"main": "main.js",
 	"scripts": {
 		"dev": "node esbuild.config.mjs",
 		"build": "tsc -noEmit -skipLibCheck && node esbuild.config.mjs production",
 		"version": "node version-bump.mjs && git add manifest.json versions.json"
+	},
+	"publishConfig": {
+		"provenance": true
+	},
+	"homepage": "https://github.com/vincentpalma/typed-math-snippets",
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/vincentpalma/typed-math-snippets"
 	},
 	"keywords": [],
 	"author": "",
@@ -21,6 +29,7 @@
 		"@codemirror/state": "^6.0.0",
 		"@codemirror/view": "^6.0.0",
 		"@lezer/common": "^1.0.3",
+		"@lezer/highlight": "^1.2.1",
 		"@popperjs/core": "2.11.5",
 		"@types/node": "^16.11.6",
 		"@typescript-eslint/eslint-plugin": "^6.18.0",
@@ -31,7 +40,7 @@
 		"esbuild-plugin-inline-import": "^1.0.2",
 		"eslint": "^8.56.0",
 		"js-base64": "^3.7.5",
-		"obsidian": "^0.15.0",
+		"obsidian": "^1.7.2",
 		"tslib": "2.3.1",
 		"typescript": "^5.3.3"
 	},
