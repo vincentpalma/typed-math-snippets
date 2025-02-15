@@ -1,4 +1,4 @@
-name: Release Obsidian plugin
+name: Release Extension
 
 on:
   push:
@@ -6,7 +6,7 @@ on:
       - "*"
 
 env:
-  PLUGIN_NAME: obsidian-latex-suite # Change this to match the id of your plugin.
+  EXTENSION_NAME: typed-math-snippets
 
 jobs:
   build:
@@ -24,9 +24,9 @@ jobs:
         run: |
           npm install
           npm run build
-          mkdir ${{ env.PLUGIN_NAME }}
-          cp main.js manifest.json styles.css ${{ env.PLUGIN_NAME }}
-          zip -r ${{ env.PLUGIN_NAME }}.zip ${{ env.PLUGIN_NAME }}
+          mkdir ${{ env.EXTENSION_NAME }}
+          cp main.js manifest.json styles.css ${{ env.EXTENSION_NAME }}
+          zip -r ${{ env.EXTENSION_NAME }}.zip ${{ env.EXTENSION_NAME }}
           ls
           echo "::set-output name=tag_name::$(git tag --sort version:refname | tail -n 1)"
 
@@ -49,8 +49,8 @@ jobs:
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
         with:
           upload_url: ${{ steps.create_release.outputs.upload_url }}
-          asset_path: ./${{ env.PLUGIN_NAME }}.zip
-          asset_name: ${{ env.PLUGIN_NAME }}-${{ steps.build.outputs.tag_name }}.zip
+          asset_path: ./${{ env.EXTENSION_NAME }}.zip
+          asset_name: ${{ env.EXTENSION_NAME }}-${{ steps.build.outputs.tag_name }}.zip
           asset_content_type: application/zip
 
       - name: Upload main.js
